@@ -8,8 +8,34 @@ import joblib
 
 pipe_lr = joblib.load(open("model/text_emotion.pkl", "rb"))
 
-emotions_emoji_dict = {"anger": "😠", "disgust": "🤮", "fear": "😨😱", "happy": "🤗", "joy": "😂", "neutral": "😐", "sad": "😔",
-                       "sadness": "😔", "shame": "😳", "surprise": "😮"}
+emotions_emoji_dict = {
+    "anger": "😠",
+    "disgust": "🤮",
+    "fear": "😨😱",
+    "happy": "🤗",
+    "joy": "😂",
+    "neutral": "😐",
+    "sad": "😔",
+    "sadness": "😔",
+    "shame": "😳",
+    "surprise": "😮",
+    "Excited": "🤩",
+    "Content": "😌",
+    "Angry": "😡",
+    "Frustrated": "😤",
+    "Confused": "😕",
+    "Bored": "😒",
+    "Relaxed": "😎",
+    "Anxious": "😰",
+    "Calm": "🧘",
+    "Love": "❤️",
+    "Disgust": "🤢",
+    "Shy": "😊",
+    "Embarrassed": "😳",
+    "Curious": "🤔",
+    "Jealous": "😒",
+    "Grateful": "🙏"
+}
 
 
 def predict_emotions(docx):
@@ -25,10 +51,10 @@ def get_prediction_proba(docx):
 def main():
     st.title("Mood_Mate")
     st.subheader("Detect Emotions In Text")
-    st.text_area("Welcome to the moodmate!")
+    st.write("Welcome to the moodmate!")
   
     with st.form(key='my_form'):
-        raw_text = st.text_area("Type Here")
+        raw_text = st.text_area("Enter Your Text Here")
         submit_text = st.form_submit_button(label='Submit')
 
     if submit_text:
@@ -38,7 +64,7 @@ def main():
         probability = get_prediction_proba(raw_text)
 
         with col1:
-            st.success("Original Text")
+            st.success("Your Text")
             st.write(raw_text)
 
             st.success("Prediction")
@@ -56,7 +82,7 @@ def main():
 
             fig = alt.Chart(proba_df_clean).mark_bar().encode(x='emotions', y='probability', color='emotions')
             st.altair_chart(fig, use_container_width=True)
-
+        st.subheader("Thank you!")
 
 
 
