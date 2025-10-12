@@ -23,9 +23,10 @@ def get_prediction_proba(docx):
 
 
 def main():
-    st.title("Text Emotion Detection")
+    st.title("Mood_Mate")
     st.subheader("Detect Emotions In Text")
-
+    st.text_area("Welcome to the moodmate!")
+  
     with st.form(key='my_form'):
         raw_text = st.text_area("Type Here")
         submit_text = st.form_submit_button(label='Submit')
