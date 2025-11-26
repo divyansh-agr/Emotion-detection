@@ -1,6 +1,5 @@
 # Emotion Detection
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Language](https://img.shields.io/badge/language-Jupyter%20Notebook%20%26%20Python-brightgreen) 
 
 ## Overview
