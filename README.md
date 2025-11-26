@@ -77,10 +77,5 @@ print(f"Detected Emotion: {emotion}")
 
 Contributions are welcome! Please open an issue or submit a pull request for improvements, bug fixes, or new features.
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
 ---
-
 **Author:** [divyansh-agr](https://github.com/divyansh-agr)
